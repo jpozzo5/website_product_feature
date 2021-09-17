@@ -9,5 +9,5 @@ class ProductFeatures(models.Model):
     _name = 'product.feature'
     name = fields.Char(string='Nombre')
     description = fields.Char(string='Descripción')
-    image = fields.Binary(string='Imagen')
+    image = fields.Binary(string='Imagen', attachment=True)
     

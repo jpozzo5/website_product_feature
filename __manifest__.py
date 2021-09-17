@@ -24,6 +24,8 @@
         'security/ir.model.access.csv',
         'views/inherit_product_template.xml',
         'views/product_template_feature.xml',
+        'views/assets.xml',
+        'views/template_product.xml'
 
     ],
 

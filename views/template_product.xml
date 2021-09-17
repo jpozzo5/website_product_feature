@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data >
+        <template id="product_feature" inherit_id="website_sale.product">
+            <xpath expr="//section[@id='product_detail']" position="inside">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>Propiedades</h3>
+                        <table>
+                            <tr id ="color_category">
+                                <td style ="width:130px;"><strong>Categoria de color </strong></td>
+                                <td style ="width:100px;" class="text-right"><span t-esc ="product.color_category" /></td>
+                            </tr>
+                            <tr id ="art">
+                                <td style ="width:130px;"><strong>Arte </strong></td>
+                                <td style ="width:100px;"  class="text-right"><span t-esc ="product.art" /></td>
+                            </tr>
+                            <tr id ="properties">
+                                <td style ="width:130px;"><strong>Propiedades del papel tapiz </strong></td>
+                                <td style ="width:100px;" class="text-right"><span t-esc ="product.properties" /></td>
+                            </tr>
+                            <tr id ="carrier_material">
+                                <td style ="width:130px;"><strong>Medida Rollo </strong></td>
+                                <td style ="width:100px;" class="text-right"><span t-esc ="product.carrier_material" /></td>
+                            </tr>
+                            <tr id ="upper_material">
+                                <td style ="width:130px;"><strong>Material Superior </strong></td>
+                                <td style ="width:100px;" class="text-right"><span t-esc ="product.upper_material" /></td>
+                            </tr>
+                            <tr id ="pattern_offset">
+                                <td style ="width:130px;"><strong>Material Portador </strong></td>
+                                <td style ="width:100px;" class="text-right"><span t-esc ="product.pattern_offset" /></td>
+                            </tr>
+                            <tr id ="roll_measure">
+                                <td style ="width:130px;"><strong>Desplazamiento de patrón </strong></td>
+                                <td style ="width:100px;" class="text-right"><span t-esc ="product.roll_measure" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Descripción</h3>
+                        <p t-esc ="product.description_product" class="text-justify" />
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Simbolo</h3>
+                        <div class="row">
+                          <t t-if="len(product.feature_ids)" t-foreach="product.feature_ids" t-as="feature">
+                              <div class="col-sm-3" data-toggle="tooltip" t-att-title ="feature.name + ',' + feature.description + '.'" title="Hooray!" t-field="feature.image" t-options="{'widget': 'image', 'class': 'product_detail_img', 'alt-field': 'name'}"/>
+                            </t>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </xpath>
+        </template> 
+        
+    </data>
+</odoo>
